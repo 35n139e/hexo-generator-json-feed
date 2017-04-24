@@ -18,6 +18,7 @@ function hexo_generator_json_feed(site) {
 				description: post.excerpt ? minify(post.excerpt) : minify(post.content),
 				pubDate: post.date.toDate().toUTCString(),
 				guid: post.permalink,
+        // modifired by 35n139e
 				category: post.categories.map(function (cat) {return cat.name;}).join(','),
 				tag: post.tags.map(function (tag) {return tag.name;}).join(',')
       };
