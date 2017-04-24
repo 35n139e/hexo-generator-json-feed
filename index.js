@@ -18,11 +18,8 @@ function hexo_generator_json_feed(site) {
 				description: post.excerpt ? minify(post.excerpt) : minify(post.content),
 				pubDate: post.date.toDate().toUTCString(),
 				guid: post.permalink,
-				category: post.categories.length ? post.categories.map(function (cat) {
-          return cat.name;
-        }).join(',') : post.tags.map(function (tag) {
-          return tag.name;
-        }).join(',')
+				category: post.categories.map(function (cat) {return cat.name;}).join(','),
+				tag: post.tags.map(function (tag) {return tag.name;}).join(',')
       };
     }),
 
